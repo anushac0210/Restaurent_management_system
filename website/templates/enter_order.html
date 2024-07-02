@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    h3 {
+      margin-top: 0;
+      background-color: #008B8B;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px 5px 0 0;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #008B8B;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005555;
+    }
+
+    .form-title {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+      color: #008B8B;
+    }
+
+    .form-footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h3>Order Details</h3>
+      <form method="post" action="/website/server/enter_order/insert_oi/">
+        {% csrf_token %}
+        <div>
+            <label for="o_id">Order ID:</label>
+            <input type="text" id="o_id" name="o_id">
+        </div>
+        <div>
+            <label for="food_name">Food Name:</label>
+            <input type="text" id="food_name" name="food_name">
+        </div>
+        <div>
+            <label for="quant">Quantity:</label>
+            <input type="text" id="quant" name="quant">
+        </div>
+        <button type="submit">Submit</button>
+    </form>    
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+

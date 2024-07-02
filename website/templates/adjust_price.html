@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef ID Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Added */
+        }
+
+        .container {
+            width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute; /* Added */
+            top: 50%; /* Added */
+            left: 50%; /* Added */
+            transform: translate(-50%, -50%); /* Added */
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .image_chef {
+            position: relative; /* Added */
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .image_chef img {
+            width: 100%;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        .input-container input[type="text"],
+        .input-container input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .input-container input[type="text"]:focus,
+        .input-container input[type="submit"]:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .input-container input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .input-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="image_chef">
+        <img src="https://thumbs.dreamstime.com/b/scene-inside-restaurant-kitchen-vector-illustration-busy-modern-45031438.jpg">
+    </div> -->
+    <div class="container">
+        <h1>Enter food name and Quantity:</h1>
+        <form id="chefForm" method="post">
+            {% csrf_token %}
+            <div class="input-container">
+                <input type="text" id="food_name" name="food_name" placeholder="Enter food_name">
+                <input type="text" id="Quantity" name="Quantity" placeholder="Enter the Quantity to check ">
+                <input type="submit" value="Enter">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("chefForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var food_name = document.getElementById("food_name").value;
+            var quant = document.getElementById("Quantity").value;
+            var url = "/website/manager_login/adjust_price/" + food_name + "/" + quant + "/";
+            this.action = url;
+            this.submit();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Description of your webpage goes here.">
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="background-image">
+        <img src="https://media.cntravellerme.com/photos/64a6de3651562a659243e182/16:9/w_2560%2Cc_limit/phy2023.din.oss.restaurant-lr.jpg" alt="Background login image">
+        <div class="container">
+            <h1>Server - Login</h1>
+            <form method="post" action='https://register-demo.freecodecamp.org'>
+                <div class="form-group">
+                    <label for="user-name">User Name:</label>
+                    <input id="user-name" type="text" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <button class="button" onclick="location.href='{{request.post}}server'">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Bill</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 80%;
+      max-width: 400px; /* Adjusted width for better readability */
+    }
+
+    h3 {
+      margin-top: 0;
+      background-color: #008B8B;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px 5px 0 0;
+      text-align: center;
+      margin-bottom: 20px; /* Increased margin for better separation */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    button[type="submit"] {
+      width: calc(100% );
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      background-color: #008B8B;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #005555;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h3>Generate Bill</h3>
+      <form method="post" action="/website/dining_supervisor/bill_calculation/display_bill/">
+        {% csrf_token %}
+        <div>
+            <label for="o_id">Order ID:</label>
+            <input type="text" id="o_id" name="o_id">
+        </div>
+        <div>
+            <label for="method">Method:</label>
+            <input type="text" id="method" name="method">
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>    
+    </div>
+  </div>
+</body>
+</html>

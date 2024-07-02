@@ -1,0 +1,93 @@
+body {
+  background-image: url(); /* Add your background image URL here */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  margin: 0; /* Reset default margin */
+  color: #555; /* Set default text color */
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 20px; /* Increase margin bottom for better spacing */
+  color: #333; /* Darken heading color */
+  text-align: center; /* Center heading */
+}
+
+h2 {
+  font-size: 24px;
+  color: #444; /* Darken sub-heading color */
+  text-align: center; /* Center sub-heading */
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+.menu {
+  width: 80%;
+  max-width: 600px; /* Increase maximum width for larger screens */
+  background-color: #f5f5f5; /* Lighten menu background color */
+  margin: 20px auto; /* Center menu horizontally with more spacing */
+  padding: 20px;
+  border-radius: 10px; /* Add rounded corners to menu */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px; /* Center image with bottom margin */
+  max-width: 100%; /* Ensure images don't exceed container width */
+}
+
+hr {
+  height: 1px; /* Reduce hr height */
+  background-color: #ddd; /* Lighten hr color */
+  border: none; /* Remove hr border */
+  margin: 20px 0; /* Add vertical margin */
+}
+
+.bottom-line {
+  margin-top: 25px;
+}
+
+.item p {
+  display: inline-block;
+  margin: 5px 0; /* Adjust item paragraph margin */
+  font-size: 18px;
+  color: #777; /* Change text color for items */
+}
+
+.flavor, .dessert {
+  text-align: left;
+  width: 60%; /* Reduce width for better alignment */
+  color: #333; /* Change text color */
+}
+
+.price {
+  text-align: right;
+  width: 40%; /* Increase width for better alignment */
+  color: #333; /* Change text color */
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+  color: #888; /* Change text color */
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #007bff; /* Change link color to blue */
+  text-decoration: none; /* Remove default underline */
+}
+
+a:hover, a:active {
+  color: #0056b3; /* Darken link color on hover and active */
+}

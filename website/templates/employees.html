@@ -1,0 +1,22 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Employees</title>
+<link rel="stylesheet" type="text/css" href="{% static 'employees.css' %}">
+</head>
+<body>
+    <h1>All Employees</h1>
+    <div class="employee-list">
+        {% for employee in employees %}
+        <div class="employee-row">
+            <span class="name">{{ employee.name }}</span> |
+            <span class="designation">{{ employee.designation }}</span> |
+            <span class="salary">{{ employee.salary }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

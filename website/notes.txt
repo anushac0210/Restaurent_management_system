@@ -1,0 +1,7 @@
+mamager template: buttons:  view employee 
+                            menu
+                            revenue till now
+                            top_selling_food
+                            price_change
+                            orders_by_mode
+                            

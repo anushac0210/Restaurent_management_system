@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .bill-details {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h3 {
+            margin-top: 0;
+            background-color: #008B8B;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+        }
+
+        .bill-row {
+            margin-bottom: 10px;
+        }
+
+        .bill-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bill-details">
+            <h3>Bill Details</h3>
+            {% if display_bill %}
+                {% for bill in display_bill %}
+                    <div class="bill-row">
+                        <span class="bill-label">Bill No:</span> {{ bill.0 }}<br>
+                        <span class="bill-label">Total Amount:</span> {{ bill.1 }}<br>
+                        <span class="bill-label">Tax:</span> {{ bill.2 }}<br>
+                        <span class="bill-label">Discount:</span> {{ bill.3 }}<br>
+                        <span class="bill-label">Net Amount:</span> {{ bill.4 }}<br>
+                        <span class="bill-label">Table ID:</span> {{ bill.5 }}<br>
+                        <span class="bill-label">Customer ID:</span> {{ bill.6 }}<br>
+                        <span class="bill-label">Order ID:</span> {{ bill.7 }}<br>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No bill details available.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
